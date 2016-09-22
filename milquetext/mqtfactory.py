@@ -8,8 +8,14 @@ from twisted.web.server import Site
 class SendMessage(Resource):
     isLeaf = True
 
+    def render_GET(self, request):
+        request.setResponseCode(403, message='Forbidden')
+
     def render_PUT(self, request):
-        pass
+        request.setHeader('Content-Type', 'application/json')
+        request.setResponseCode(501, 'Coming Soon')
+        request.write(json.dumps({'error': 'NotImplemented'}))
+        request.finish()
 
 
 class MilquetextFactory(Site):
