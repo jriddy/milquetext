@@ -1,1 +1,1 @@
-./killmqt; ./startmqt
+./stopmqt; ./startmqt
