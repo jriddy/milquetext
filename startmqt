@@ -1,0 +1,10 @@
+#!/bin/bash
+
+name=milquetext
+logdir=/tmp
+piddir=/tmp
+
+twistd \
+    --logfile="${logdir}/${name}.log" \
+    --pidfile="${piddir}/${name}.pid" \
+    --python="${name}/mqtserver.py"
